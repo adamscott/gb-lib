@@ -3,7 +3,8 @@
 ; de = destination address
 ; hl = source address
 ; bc = byte count
-memcpy::
+
+;memcpy::
     inc c
     inc b
     jr .start

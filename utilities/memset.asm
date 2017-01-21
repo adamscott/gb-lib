@@ -1,9 +1,10 @@
-;https://github.com/assemblydigest/gameboy/blob/master/part-3-libraries/memory.z80
+; https://github.com/assemblydigest/gameboy/blob/master/part-3-libraries/memory.z80
 ; Fills a range in memory with a specified byte value.
 ; hl = destination address
 ; bc = byte count
 ; a = byte value
-memset::
+
+;memset::
 	inc c
 	inc b
 	jr .start\@

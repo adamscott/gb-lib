@@ -1,4 +1,6 @@
-ROM_VBlank::
+; VBlank routine (DMA transfer)
+
+;vblank::
 	push af
 	ld a, SPR_TBL
 	ld [DMA], a
