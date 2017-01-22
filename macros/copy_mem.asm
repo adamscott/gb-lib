@@ -1,16 +1,16 @@
 ; Copies count bytes from source to destination.
-; de = destination address
-; hl = source address
-; bc = byte count
+; hl = \1 = source address
+; de = \2 = destination address
+; bc = \3 = byte count
 copy_mem:   MACRO
-            push de
             push hl
+            push de
             push bc
-            ld de, \1
-            ld hl, \2
-            ld bc, \3
+            ld hl, \1       ; \1 = source address
+            ld de, \2       ; \2 = destination address
+            ld bc, \3       ; \3 = byte count
             call memcpy
             pop bc
-            pop hl
             pop de
+            pop hl
             ENDM
