@@ -5,14 +5,14 @@
 ; a = byte value
 
 ;memset::
-	inc c
-	inc b
-	jr .start\@
+    inc c
+    inc b
+    jr .start\@
 .repeat\@:
-	ld [hl+], a
+    ld [hl+], a
 .start\@:
-	dec c
-	jr nz, .repeat\@
-	dec b
-	jr nz, .repeat\@
+    dec c
+    jr nz, .repeat\@
+    dec b
+    jr nz, .repeat\@
 ret
