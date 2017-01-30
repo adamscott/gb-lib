@@ -1,10 +1,11 @@
 ; Turn off LCD display
 
-;lcd_on::
+;lcd_off::
     di                  ; Deactivate interrupts
-    ldh a,[$FF44]       ; $ff44=LCDC Y-Pos
+.loop\@
+    ldh a,[LCDC]       ; $ff44=LCDC Y-Pos
     cp $90              ; $90 and bigger = in VBL
-    jr nz,LCDOff        ; Loop until = $90
+    jr nz, .loop\@      ; Loop until = $90
     xor a
     ldh [LCDC],a        ; Turn off LCD display
 reti                    ; Return and activate interrupts
